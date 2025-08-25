@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --pattern-size: 5rem;
+  --pattern-color: #1717174d;
+  --pattern: linear-gradient(0deg, var(--background) 10%, var(--background) 25%, transparent),
+    repeating-linear-gradient(90deg, transparent 1px, transparent var(--pattern-size), var(--pattern-color) calc(var(--pattern-size) + 1px)),
+    repeating-linear-gradient(0deg, transparent 1px, transparent var(--pattern-size), var(--pattern-color) calc(var(--pattern-size) + 1px));
 }
 
 @theme inline {
@@ -16,11 +21,14 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --pattern-color: #ededed4d;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: var(--pattern);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100svh;
 }
