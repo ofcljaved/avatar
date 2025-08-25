@@ -15,6 +15,9 @@ An interactive avatar grid component built with Next.js, showcasing hover effect
 
 Visit the live showcase to see the avatars in action with their interactive hover effects and user information tooltips.
 
+Website: [https://avatar-ofcljaved.vercel.app/](https://avatar-ofcljaved.vercel.app/)
+
+
 ## Project Structure
 
 ```
