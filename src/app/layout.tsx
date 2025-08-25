@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Avatar",
-  description: "Animated avatars for your projects",
+  title: "Avatar Showcase - Interactive Avatar Grid",
+  description: "An interactive showcase of animated avatars with hover effects and user information. Perfect for demonstrating avatar components in your projects.",
+  keywords: ["avatar", "component", "showcase", "interactive", "UI", "React", "Next.js"],
 };
 
 export default function RootLayout({

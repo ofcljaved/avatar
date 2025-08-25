@@ -23,11 +23,17 @@ export function AvatarTitle({ id, hoveredId }: {
             damping: 20,
             delay: 0.1,
           }}
-          className=
-          "absolute left-1/2 bottom-[110%] z-30 mb-1 -translate-x-1/2 px-4 py-2 shadow-lg *:whitespace-nowrap border-b border-b-transparent bg-border-90 from-transparent via-blue-400 to-transparent border-background-white dark:border-background-black rounded dark:mask-border-neutral-900"
+          className="absolute left-1/2 bottom-[110%] z-30 mb-1 -translate-x-1/2 px-4 py-2 shadow-lg *:whitespace-nowrap border-b border-b-transparent bg-border-90 from-transparent via-blue-400 to-transparent border-background-white dark:border-background-black rounded dark:mask-border-neutral-900"
+          role="tooltip"
+          aria-live="polite"
+          aria-label={`User information for ${userData.name}`}
         >
-          <div className="font-semibold">{userData.name}</div>
-          <div className="text-xs opacity-80">{userData.role}</div>
+          <h3 className="font-semibold">
+            {userData.name}
+          </h3>
+          <p className="text-xs opacity-80">
+            {userData.role}
+          </p>
         </motion.div>
       )}
     </AnimatePresence>
