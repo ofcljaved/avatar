@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Avatar Showcase
 
-## Getting Started
+An interactive avatar grid component built with Next.js, showcasing hover effects, animations, and dynamic user information generation.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Interactive Avatar Grid** - 8 avatars with unique hover effects
+- **Smooth Animations** - CSS transitions and Framer Motion animations
+- **Dynamic User Data** - Random names and roles generated for each avatar
+- **Responsive Design** - Grid layout that adapts to different screen sizes
+- **Accessibility First** - Semantic HTML, ARIA labels, and keyboard navigation
+- **Modern UI** - Clean design with hover states and tooltips
+
+## Live Demo
+
+Visit the live showcase to see the avatars in action with their interactive hover effects and user information tooltips.
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx            # Main page with avatar grid
+│   └── globals.css         # Global styles
+├── components/
+│   ├── avatar.tsx          # Individual avatar component
+│   └── avatar-title.tsx    # Tooltip component for user info
+└── lib/
+    ├── user-data-generator.ts  # Random name/role generator
+    ├── unique-ramdom-array.ts  # Unique ID generator
+    └── utils.ts               # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 How It Works
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Avatar Generation
+- Each avatar gets a unique ID from a random array
+- User data (name, role) is generated deterministically based on the ID
+- This ensures consistent data for each avatar across page refreshes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Interactive Features
+- **Hover Effects**: Avatars scale and show tooltips on hover
+- **Grid Animation**: Grid spacing adjusts on hover for dynamic layout
+- **Tooltip Display**: User information appears with smooth animations
+- **Keyboard Navigation**: Full keyboard support with focus management
 
-## Learn More
+### Data Generation
+The system generates realistic professional data:
+- **Names**: 32 diverse first names + 32 last names
+- **Roles**: 24 professional roles (developers, designers, managers, etc.)
+- **Distribution**: Uses mathematical distribution to ensure variety
 
-To learn more about Next.js, take a look at the following resources:
+## Component Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Avatar Component
+- Handles individual avatar display and hover state
+- Manages image loading and accessibility
+- Supports both mouse and keyboard interactions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### AvatarTitle Component
+- Displays user information tooltip
+- Uses Framer Motion for smooth animations
+- Generates user data on-demand
 
-## Deploy on Vercel
+### User Data Generator
+- Pure JavaScript implementation (no external dependencies)
+- Deterministic generation for consistent results
+- Easily extensible for additional data fields
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ♿ Accessibility Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Semantic HTML** - Proper heading hierarchy and list structure
+- **ARIA Labels** - Descriptive labels for screen readers
+- **Keyboard Navigation** - Full tab support and focus management
+- **Screen Reader Support** - Proper content announcements
+- **High Contrast** - Accessible color schemes
