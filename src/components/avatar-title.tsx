@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from "motion/react";
+import { generateUserDataFromId } from "@/lib/user-data-generator";
 
-export function AvatarTitle({ id, hoveredId }: { id: number, hoveredId: number | null }) {
-
-  const userData = (id: number) => ({
-    name: `User ${id}`,
-    title: `Role for ${id}`
-  });
+export function AvatarTitle({ id, hoveredId }: { 
+  id: number; 
+  hoveredId: number | null; 
+}) {
+  const userData = generateUserDataFromId(id);
 
   return (
     <AnimatePresence>
@@ -26,8 +26,8 @@ export function AvatarTitle({ id, hoveredId }: { id: number, hoveredId: number |
           className=
           "absolute left-1/2 bottom-[110%] z-30 mb-1 -translate-x-1/2 px-4 py-2 shadow-lg *:whitespace-nowrap border-b border-b-transparent bg-border-90 from-transparent via-blue-400 to-transparent border-background-white dark:border-background-black rounded dark:mask-border-neutral-900"
         >
-          <div className="font-semibold">{userData(id).name}</div>
-          <div className="text-xs opacity-80">{userData(id).title}</div>
+          <div className="font-semibold">{userData.name}</div>
+          <div className="text-xs opacity-80">{userData.role}</div>
         </motion.div>
       )}
     </AnimatePresence>
